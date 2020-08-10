@@ -1,0 +1,23 @@
+{
+  "name": "nunjucks-jam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-html": "node build-html.js",
+    "watch-njk": "nodemon --watch src/templates/ --ext njk build-html.js",
+    "dev": "node build-html.js && concurrently \"npm:watch-njk\" \"parcel ./pre-dist/*.html\"",
+    "build": "node build-html.js && parcel build ./pre-dist/*.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "cssnano": "^4.1.10",
+    "nunjucks": "^3.2.2",
+    "postcss-modules": "^3.2.0",
+    "sass": "^1.26.10"
+  }
+}

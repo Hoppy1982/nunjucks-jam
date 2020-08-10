@@ -1,0 +1,1 @@
+{"version":3,"sources":["..\\src\\styles\\global.scss"],"names":[],"mappings":"AAAA,EACE,6BAAA,CAAA,sBAIA,UACE","file":"global.547e9cf8.css","sourceRoot":"..\\pre-dist","sourcesContent":["* {\r\n  box-sizing: border-box;\r\n}\r\n\r\nhtml {\r\n  body {\r\n    border: 2px solid #333;\r\n  }\r\n}"]}

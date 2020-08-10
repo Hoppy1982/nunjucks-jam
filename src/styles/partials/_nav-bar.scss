@@ -1,0 +1,129 @@
+@use './partials/_helpers';
+$hamburger-line-height: 4px;
+$hamburger-line-radius: 4px;
+$hamburger-width: 40px;
+$hamburger-height: 34px;
+
+.nav-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 20px;
+  background: #333;
+}
+
+.nav-bar__site-title {
+  margin: 0;
+}
+
+.nav-bar__items {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  width: 10px;
+  height: 10px;
+  right: 0;
+  margin-right: 0;
+  top: 0;
+  transform: rotate(-10deg);
+  border: 4px solid #335;
+  transition: all 0.3s ease-in-out;
+  background: #fff;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.nav-bar__item {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.nav-bar__menu-button {
+  @include helpers.reset-button;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  font-size: 16px;
+  color: #fff;
+  transition: color 0.6s;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.nav-bar__hamburger {
+  position: relative;
+  width: $hamburger-width;
+  height: $hamburger-height;
+}
+
+.nav-bar__hamburger-1,
+.nav-bar__hamburger-2,
+.nav-bar__hamburger-3,
+.nav-bar__hamburger-4 {
+  background: #fff;
+  width: $hamburger-width;
+  height: $hamburger-line-height;
+  border-radius: $hamburger-line-radius;
+  position: absolute;
+  left: 0;
+}
+
+.nav-bar__hamburger-1 {
+  top: 0;
+  transition: margin 0.2s ease-in, top 0.2s ease-in, opacity 0.2s;
+}
+
+.nav-bar__hamburger-4 {
+  bottom: 0;
+  transition: margin 0.2s ease-in, bottom 0.2s ease-in, opacity 0.2s;
+}
+
+.nav-bar__hamburger-2,
+.nav-bar__hamburger-3 {
+  top: 50%;
+  margin-top: calc(-#{$hamburger-line-height} / 2);
+  transition: transform 0.1s ease-in;
+}
+
+
+// Open
+.open .nav-bar__menu-button {
+  color: #ff0000;
+}
+
+.open.nav-bar__items {
+  opacity: 1;
+  width: 100%;
+  height: calc(100vh - 172px);//make good
+  top: 56px;// make good
+  transform: rotate(0deg);
+  right: 40%;
+}
+
+.open .nav-bar__hamburger-1 {
+  top: 50%;
+  margin-top: calc(-#{$hamburger-line-height} / 2);
+  opacity: 0;
+}
+
+.open .nav-bar__hamburger-4 {
+  bottom: 50%;
+  margin-bottom: calc(-#{$hamburger-line-height} / 2);
+  opacity: 0;
+}
+
+.open .nav-bar__hamburger-2 {
+  transform: rotate(45deg);
+}
+
+.open .nav-bar__hamburger-3 {
+  transform: rotate(-45deg);
+}

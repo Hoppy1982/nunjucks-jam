@@ -1,0 +1,16 @@
+.nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: 2px solid red;
+}
+
+h2 {
+  color: red;
+}
+
+/*# sourceMappingURL=/js.6c09a745.css.map */
