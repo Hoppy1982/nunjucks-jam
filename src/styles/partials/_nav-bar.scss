@@ -9,6 +9,9 @@ $hamburger-width: 40px;
 $hamburger-height: 34px;
 
 
+/**
+ * MISC
+ */
 .nav-bar {
   position: relative;
   display: flex;
@@ -23,7 +26,12 @@ $hamburger-height: 34px;
   color: #fff;
 }
 
-.nav-bar__items {
+
+
+/**
+ * NAV MENU
+ */
+.nav-bar__categories {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -43,7 +51,7 @@ $hamburger-height: 34px;
   color: #fff;
 }
 
-.nav-bar__item {
+.nav-bar__category {
   transform: scale(0.1);
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -51,10 +59,39 @@ $hamburger-height: 34px;
   margin-top: 2em;
 }
 
-.nav-bar__submenu-items { list-style: none; }
+.nav-bar__category-items {
+  list-style: none;
+  padding-left: 0;
+}
 
-.nav-bar__submenu-item { margin-top: 1.5em; }
+.nav-bar__category-item {
+  position: relative;
+  margin-top: 1.5em;
+  background-image: linear-gradient(#111, #111), linear-gradient(#111, #111), linear-gradient(#111, #111), linear-gradient(#fff, #fff);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: center, center, center, center;
+  background-size: calc(100% - 4px) calc(100% - 4px), 100% calc(100% - 20px), calc(100% - 20px) 100%, 100%;
 
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    & .nav-bar__link {
+      background: transparent;
+    }
+  }
+}
+
+.nav-bar__link {
+  background: #111;
+  display: block;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
+
+
+/**
+ * MENU BUTTON
+ */
 .nav-bar__menu-button {
   @include helpers.reset-button;
   display: flex;
@@ -69,6 +106,11 @@ $hamburger-height: 34px;
   &:focus { cursor: pointer; }
 }
 
+
+
+/**
+ * HAMBURGER
+ */
 .nav-bar__hamburger {
   position: relative;
   width: $hamburger-width;
@@ -105,14 +147,15 @@ $hamburger-height: 34px;
 }
 
 
+/***************** STATE *************************/
 /**
  * MENU OPEN
  */
 .open {
-  .nav-bar__menu-button { color: #ddf; }
-  .nav-bar__items { opacity: 1; }
+  .nav-bar__menu-button { color: #ddf; }// janky - js using a transition on button itself for timing control
+  .nav-bar__categories { opacity: 1; }
   
-  .nav-bar__item {
+  .nav-bar__category {
     transform: scale(1);
     opacity: 1;
   }

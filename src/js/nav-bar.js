@@ -1,6 +1,6 @@
 const navBar = document.querySelector('.nav-bar');
 const navButton = document.querySelector('.nav-bar__menu-button');
-const navItems = document.querySelector('.nav-bar__items');
+const navItems = document.querySelector('.nav-bar__categories');
 const isOpen = navBar.classList.contains('open') ? true : false;
 const state = {
   opening: false,

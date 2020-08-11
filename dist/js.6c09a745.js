@@ -120,7 +120,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"../src/js/nav-bar.js":[function(require,module,exports) {
 var navBar = document.querySelector('.nav-bar');
 var navButton = document.querySelector('.nav-bar__menu-button');
-var navItems = document.querySelector('.nav-bar__items');
+var navItems = document.querySelector('.nav-bar__categories');
 var isOpen = navBar.classList.contains('open') ? true : false;
 var state = {
   opening: false,
@@ -219,7 +219,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58685" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57983" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

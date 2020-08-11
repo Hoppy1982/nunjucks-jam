@@ -17,6 +17,9 @@
 /**
  * COMPONENT VARIABLES
  */
+/**
+ * MISC
+ */
 .nav-bar {
   position: relative;
   display: -webkit-box;
@@ -37,7 +40,10 @@
   color: #fff;
 }
 
-.nav-bar__items {
+/**
+ * NAV MENU
+ */
+.nav-bar__categories {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -67,7 +73,7 @@
   color: #fff;
 }
 
-.nav-bar__item {
+.nav-bar__category {
   -webkit-transform: scale(0.1);
           transform: scale(0.1);
   opacity: 0;
@@ -79,14 +85,38 @@
   margin-top: 2em;
 }
 
-.nav-bar__submenu-items {
+.nav-bar__category-items {
   list-style: none;
+  padding-left: 0;
 }
 
-.nav-bar__submenu-item {
+.nav-bar__category-item {
+  position: relative;
   margin-top: 1.5em;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#111), to(#111)), -webkit-gradient(linear, left top, left bottom, from(#111), to(#111)), -webkit-gradient(linear, left top, left bottom, from(#111), to(#111)), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background-image: linear-gradient(#111, #111), linear-gradient(#111, #111), linear-gradient(#111, #111), linear-gradient(#fff, #fff);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: center, center, center, center;
+  background-size: calc(100% - 4px) calc(100% - 4px), 100% calc(100% - 20px), calc(100% - 20px) 100%, 100%;
+}
+.nav-bar__category-item:hover, .nav-bar__category-item:focus {
+  cursor: pointer;
+}
+.nav-bar__category-item:hover .nav-bar__link, .nav-bar__category-item:focus .nav-bar__link {
+  background: transparent;
 }
 
+.nav-bar__link {
+  background: #111;
+  display: block;
+  padding: 8px 16px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+/**
+ * MENU BUTTON
+ */
 .nav-bar__menu-button {
   background: transparent;
   -webkit-box-shadow: 0px 0px 0px transparent;
@@ -127,6 +157,9 @@
   cursor: pointer;
 }
 
+/**
+ * HAMBURGER
+ */
 .nav-bar__hamburger {
   position: relative;
   width: 40px;
@@ -167,16 +200,17 @@
   transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in;
 }
 
+/***************** STATE *************************/
 /**
  * MENU OPEN
  */
 .open .nav-bar__menu-button {
   color: #ddf;
 }
-.open .nav-bar__items {
+.open .nav-bar__categories {
   opacity: 1;
 }
-.open .nav-bar__item {
+.open .nav-bar__category {
   -webkit-transform: scale(1);
           transform: scale(1);
   opacity: 1;
