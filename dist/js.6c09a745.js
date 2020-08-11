@@ -128,6 +128,12 @@ var state = {
   open: false,
   closed: true
 };
+/**
+ * Only actions menu click if not in transitional state. 
+ * Probably overkill but will help if need to transition 
+ * from display: none.
+ */
+
 navButton.addEventListener('click', function (evt) {
   if (state.closed === true) {
     state.opening = true;
@@ -145,14 +151,17 @@ navButton.addEventListener('click', function (evt) {
 
   if (state.opening) {
     navBar.classList.add('open');
-    navItems.classList.add('open');
   }
 
   if (state.closing) {
     navBar.classList.remove('open');
-    navItems.classList.remove('open');
   }
 });
+/**
+ * Reveals / removes menu to screen readers
+ * once css transtions complete.
+ */
+
 navButton.addEventListener('transitionend', function (evt) {
   var transitionOnNavButton = evt.target === this;
 
@@ -210,7 +219,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59159" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58685" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

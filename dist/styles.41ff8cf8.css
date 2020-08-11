@@ -68,7 +68,15 @@
 }
 
 .nav-bar__item {
-  margin-top: 1.5em;
+  -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+  overflow: hidden;
+  margin-top: 2em;
 }
 
 .nav-bar__submenu-items {
@@ -76,7 +84,7 @@
 }
 
 .nav-bar__submenu-item {
-  margin-top: 1em;
+  margin-top: 1.5em;
 }
 
 .nav-bar__menu-button {
@@ -165,28 +173,28 @@
 .open .nav-bar__menu-button {
   color: #ddf;
 }
-
-.open.nav-bar__items {
+.open .nav-bar__items {
   opacity: 1;
 }
-
+.open .nav-bar__item {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
 .open .nav-bar__hamburger-1 {
   top: 50%;
   margin-top: calc(-4px / 2);
   opacity: 0;
 }
-
 .open .nav-bar__hamburger-4 {
   bottom: 50%;
   margin-bottom: calc(-4px / 2);
   opacity: 0;
 }
-
 .open .nav-bar__hamburger-2 {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-
 .open .nav-bar__hamburger-3 {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);

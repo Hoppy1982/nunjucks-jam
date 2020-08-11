@@ -1,9 +1,7 @@
 const navBar = document.querySelector('.nav-bar');
 const navButton = document.querySelector('.nav-bar__menu-button');
 const navItems = document.querySelector('.nav-bar__items');
-
-let isOpen = navBar.classList.contains('open') ? true : false;
-
+const isOpen = navBar.classList.contains('open') ? true : false;
 const state = {
   opening: false,
   closing: false,
@@ -11,6 +9,12 @@ const state = {
   closed: true
 }
 
+
+/**
+ * Only actions menu click if not in transitional state. 
+ * Probably overkill but will help if need to transition 
+ * from display: none.
+ */
 navButton.addEventListener('click', function(evt) {
   if (state.closed === true) {
     state.opening = true;
@@ -25,17 +29,15 @@ navButton.addEventListener('click', function(evt) {
     state.open = false;
   }
 
-  if (state.opening) {
-    navBar.classList.add('open');
-    navItems.classList.add('open');
-  }
-
-  if (state.closing) {
-    navBar.classList.remove('open');
-    navItems.classList.remove('open');
-  }
+  if (state.opening) { navBar.classList.add('open'); }
+  if (state.closing) { navBar.classList.remove('open'); }
 });
 
+
+/**
+ * Reveals / removes menu to screen readers
+ * once css transtions complete.
+ */
 navButton.addEventListener('transitionend', function(evt) {
   let transitionOnNavButton = evt.target === this;
 
