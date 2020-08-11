@@ -161,6 +161,7 @@ navButton.addEventListener('transitionend', function (evt) {
     state.opening = false;
     state.closing = false;
     state.closed = false;
+    this.setAttribute('aria-expanded', 'true');
     navItems.removeAttribute('aria-hidden');
   }
 
@@ -169,29 +170,10 @@ navButton.addEventListener('transitionend', function (evt) {
     state.closing = false;
     state.opening = false;
     state.open = false;
-    navItems.setAttribute('aria-hidden', true);
+    this.setAttribute('aria-expanded', 'false');
+    navItems.setAttribute('aria-hidden', 'true');
   }
-}); // navButton.addEventListener('click', function(evt) {
-//   navBar.classList.toggle('open');
-//   isOpen = navBar.classList.contains('open') ? true : false;
-//   if (isOpen) {
-//     console.log('opening')
-//     navItems.style.display = 'flex';
-//     window.requestAnimationFrame(function() {
-//       console.log('opened')
-//       navItems.classList.add('open');
-//     });
-//   } else {
-//     window.requestAnimationFrame(function() {
-//       navItems.classList.remove('open');
-//     });
-//   }
-// });
-// navItems.addEventListener('transitionend', function(evt) {
-//   if (!isOpen) {
-//     navItems.style.display = 'none';
-//   }
-// });
+});
 },{}],"../src/js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -228,7 +210,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50597" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59159" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

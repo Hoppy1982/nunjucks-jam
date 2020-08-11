@@ -12,25 +12,16 @@
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <!-- <link rel="apple-touch-icon" href="icon.png"> -->
     <!-- Place favicon.ico in the root directory -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../src/styles/global.scss">
     
   </head>
 
   <body>
-    <nav class="nav-bar">
+    <nav class="nav-bar" aria-label="Main Navigation">
   <h2 class="nav-bar__site-title">Site Title</h2>
-
-  <ul class="nav-bar__items" aria-hidden="true">
-    <li class="nav-bar__item">Test</li>
-    <li class="nav-bar__item">Test</li>
-    <li class="nav-bar__item">Test</li>
-    <li class="nav-bar__item">Test</li>
-    <li class="nav-bar__item">Test</li>
-    <li class="nav-bar__item">Test</li>
-  </ul>
-
   
-  <button class="nav-bar__menu-button">
+  <button class="nav-bar__menu-button" aria-expanded="false" aria-controls="nav-bar__items">
     <div class="nav-bar__hamburger">
       <span class="nav-bar__hamburger-1"></span>
       <span class="nav-bar__hamburger-2"></span>
@@ -40,6 +31,25 @@
     menu
   </button>
 
+  <ul id="nav-bar__items" class="nav-bar__items" aria-hidden="true">
+    <li class="nav-bar__item">
+      <ul class="nav-bar__submenu-items">
+        <h3 class="nav-bar__submenu-title">Category</h3>
+        <li class="nav-bar__submenu-item"><a class="nav-bar__submenu-link">Menu item</a></li>
+        <li class="nav-bar__submenu-item"><a class="nav-bar__submenu-link">Menu item</a></li>
+        <li class="nav-bar__submenu-item"><a class="nav-bar__submenu-link">Menu item</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-bar__item">
+      <ul class="nav-bar__submenu-items">
+        <h3 class="nav-bar__submenu-title">Category</h3>
+        <li class="nav-bar__submenu-item"><a class="nav-bar__submenu-link">Menu item</a></li>
+        <li class="nav-bar__submenu-item"><a class="nav-bar__submenu-link">Menu item</a></li>
+        <li class="nav-bar__submenu-item"><a class="nav-bar__submenu-link">Menu item</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     
   <h1>Abouta string</h1>

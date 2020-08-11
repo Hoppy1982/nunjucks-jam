@@ -1,8 +1,17 @@
+:root {
+  --bodyFont: 'Roboto Mono', monospace;
+}
+
 * {
   box-sizing: border-box;
+  &:focus {
+  //border: 1px solid green !important;
+  }
 }
 
 body {
+  font-family: var(--bodyFont);
   margin: 0;
   padding: 0;
 }
+

@@ -1,5 +1,5 @@
 /**
- * Resets
+ * RESETS
  */
 
 @mixin reset-button {
@@ -23,4 +23,18 @@
   &:focus {
     outline: 0;
   }
+}
+
+
+/**
+* LAYOUT
+*/
+.container-outer {
+  padding: 0 20px;
+}
+
+.container-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
