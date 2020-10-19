@@ -14,7 +14,8 @@
     <!-- Place favicon.ico in the root directory -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../src/styles/global.scss">
-    {% block extraHeadTags %}{% endblock %}
+    <link rel="stylesheet" href="../src/styles/site.scss">
+    {% block headExtraStyles %}{% endblock %}
   </head>
 
   <body>
@@ -22,6 +23,7 @@
     {% block bodyContent %}
       <h1>Default Header</h1>
     {% endblock %}
-    {% block bodyEndScripts %}{% endblock %}
+    <script src="../src/js/site.js"></script>
+    {% block bodyExtraScripts %}{% endblock %}
   </body>
 </html>

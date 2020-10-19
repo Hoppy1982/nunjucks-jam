@@ -59,23 +59,33 @@ $hamburger-height: 34px;
   margin-top: 2em;
 }
 
-.nav-bar__category-items {
+.nav-bar__items {
   list-style: none;
   padding-left: 0;
 }
 
-.nav-bar__category-title {
+.nav-bar__title {
   font-weight: 400;
   color: #ddd;
 }
 
-.nav-bar__category-item {
+.nav-bar__item {
   position: relative;
   margin-top: 1.5em;
   background-image: linear-gradient(#111, #111), linear-gradient(#111, #111), linear-gradient(#111, #111), linear-gradient(#fff, #fff);
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-position: center, center, center, center;
   background-size: calc(100% - 4px) calc(100% - 4px), 100% calc(100% - 20px), calc(100% - 20px) 100%, 100%;
+
+  &--active {
+    ::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: #fff;
+    }
+  }
 
   &:hover,
   &:focus {
@@ -91,13 +101,13 @@ $hamburger-height: 34px;
 .nav-bar__link {
   font-weight: 200;
   background: #111;
+  color: #fff;
   display: block;
+  text-decoration: none;
   padding: 8px 16px;
-  //transition: background-color 0.3s ease;
-  transition-property: background-color, font-weight, text-shadow;
+  transition-property: font-weight, text-shadow;
   transition-timing-function: ease;
-  transition-duration: 0.4s, 0.2s, 0.1s;
-
+  transition-duration: 0.2s, 0.1s;
 }
 
 

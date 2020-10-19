@@ -1,5 +1,5 @@
 <nav class="nav-bar" aria-label="Main Navigation">
-  <h2 class="nav-bar__site-title">markcraft</h2>
+  <h2 class="nav-bar__site-title">markhopcraft</h2>
   
   <button class="nav-bar__menu-button" aria-expanded="false" aria-controls="nav-bar__categories">
     <div class="nav-bar__hamburger">
@@ -12,28 +12,39 @@
   </button>
 
   <ul id="nav-bar__categories" class="nav-bar__categories" aria-hidden="true">
+
     <li class="nav-bar__category">
-      <ul class="nav-bar__category-items">
-        <li class="nav-bar__category-item"><a class="nav-bar__link">Home</a></li>
-        <li class="nav-bar__category-item"><a class="nav-bar__link">About</a></li>
+      <h3 class="nav-bar__title">General</h3>
+      <ul class="nav-bar__items">
+        {% for item in pages.misc %}
+          <li class="nav-bar__item {% if page == item.name %}nav-bar__item--active{% endif %}">
+            <a class="nav-bar__link" href={{ item.href }}>{{ item.name }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </li>
 
     <li class="nav-bar__category">
-      <ul class="nav-bar__category-items">
-        <h3 class="nav-bar__category-title">Category A</h3>
-        <li class="nav-bar__category-item"><a class="nav-bar__link">Menu item</a></li>
-        <li class="nav-bar__category-item"><a class="nav-bar__link">Menu item</a></li>
+      <h3 class="nav-bar__title">Front End Projects</h3>
+      <ul class="nav-bar__items">
+        {% for item in pages.frontEndProjects %}
+          <li class="nav-bar__item {% if page == item.name %}nav-bar__item--active{% endif %}">
+            <a class="nav-bar__link" href={{ item.href }}>{{ item.name }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </li>
 
     <li class="nav-bar__category">
-      <ul class="nav-bar__category-items">
-        <h3 class="nav-bar__category-title">Category B</h3>
-        <li class="nav-bar__category-item"><a class="nav-bar__link">Menu item</a></li>
-        <li class="nav-bar__category-item"><a class="nav-bar__link">Menu item</a></li>
-        <li class="nav-bar__category-item"><a class="nav-bar__link">Menu item</a></li>
+      <h3 class="nav-bar__title">Back End Projects</h3>
+      <ul class="nav-bar__items">
+        {% for item in pages.backEndProjects %}
+          <li class="nav-bar__item {% if page == item.name %}nav-bar__item--active{% endif %}">
+            <a class="nav-bar__link" href={{ item.href }}>{{ item.name }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </li>
+
   </ul>
 </nav>

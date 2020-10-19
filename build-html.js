@@ -8,7 +8,23 @@ const readdir = util.promisify(fs.readdir);
 const writeFile = util.promisify(fs.writeFile);
 nunjucks.configure( ['./src/templates'] );
 const viewsDir = path.join(__dirname, 'src/templates/views');
-const ctx = { x: 'a string' };
+const ctx = {
+  pages: {
+    misc: [
+      { name: 'home', href: '/index.html' },
+      { name: 'about', href: '/about.html' }
+    ],
+    frontEndProjects: [
+      { name: 'placeholder1', href: '#' },
+      { name: 'placeholder2', href: '#' }
+    ],
+    backEndProjects: [
+      { name: 'placeholder3', href: '#' },
+      { name: 'placeholder4', href: '#' }
+    ]
+  }
+  
+};
 
 // Run
 compileViews()

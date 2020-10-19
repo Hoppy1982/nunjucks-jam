@@ -1,5 +1,11 @@
+{% set page = "about" %}
 {% extends "../layout.njk" %}
 
+
 {% block bodyContent %}
-  <h1>About{{ x }}</h1>
+  <div class="container-outer">
+    <div class="container-inner">
+      <h1>{{ page }}</h1>
+    </div>
+  </div>
 {% endblock %}

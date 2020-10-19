@@ -1,17 +1,11 @@
+{% set page = "home" %}
 {% extends "../layout.njk" %}
 
-{% block extraHeadTags %}
-  <link rel="stylesheet" href="../src/styles/index.scss">
-{% endblock %}
 
 {% block bodyContent %}
   <div class="container-outer">
     <div class="container-inner">
-      <h1>Home</h1>
+      <h1>{{ page }}</h1>
     </div>
   </div>
-{% endblock %}
-
-{% block bodyEndScripts %}
-  <script src="../src/js/index.js"></script>
 {% endblock %}
