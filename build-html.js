@@ -16,11 +16,13 @@ const ctx = {
     ],
     frontEndProjects: [
       { name: 'placeholder1', href: '#' },
-      { name: 'placeholder2', href: '#' }
+      { name: 'placeholder2', href: '#' },
+      { name: 'placeholder3', href: '#' }
     ],
     backEndProjects: [
-      { name: 'placeholder3', href: '#' },
-      { name: 'placeholder4', href: '#' }
+      { name: 'placeholder4', href: '#' },
+      { name: 'placeholder5', href: '#' },
+      { name: 'placeholder6', href: '#' }
     ]
   }
   

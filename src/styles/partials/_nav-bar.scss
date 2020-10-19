@@ -12,8 +12,7 @@ $hamburger-height: 34px;
 /**
  * MISC
  */
-.nav-bar {
-  position: relative;
+.nav-bar__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,24 +32,20 @@ $hamburger-height: 34px;
  * NAV MENU
  */
 .nav-bar__categories {
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   opacity: 0;
-  right: 0;
+  margin: 0;
   width: 100%;
-  min-height: calc(100vh - 74px - 80px);// hardcode to account for header & footer heights
   height: 0;
   background: #111; 
   background-image: radial-gradient(closest-side at 50% 40%, #111 80%,  hsl(200, 40%, 10%) 100%);
   background-size: 100% 500%;
   background-position: center 40%;
   background-repeat: no-repeat;
-  top: 58px;
-  transition: all 0.3s ease-in-out;
-  padding: 20px 20px 60px;
+  transition: opacity 0.3s ease-in-out;
   list-style: none;
   text-align: center;
   color: #fff;
@@ -60,7 +55,7 @@ $hamburger-height: 34px;
   transform: scale(0.1);
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  overflow: hidden;
+  //overflow: hidden;
   margin-top: 2em;
 }
 
@@ -180,12 +175,10 @@ $hamburger-height: 34px;
  * MENU OPEN
  */
  .nav-bar.open {
-  .nav-bar__menu-button {
-    color: #ddf;// janky - js using a transition on button itself for timing control
-  }
-
   .nav-bar__categories {
+    min-height: calc(100vh - 74px - 80px);// hardcode to account for header & footer heights
     height: auto;
+    padding: 20px 20px 60px;
     opacity: 1;
   }
   

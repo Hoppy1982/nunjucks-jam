@@ -1,18 +1,19 @@
 <nav class="nav-bar" aria-label="Main Navigation">
-  <h2 class="nav-bar__site-title">markhopcraft</h2>
+  <div class="nav-bar__top">
+    <h2 class="nav-bar__site-title">markhopcraft</h2>
   
-  <button class="nav-bar__menu-button" aria-expanded="false" aria-controls="nav-bar__categories">
-    <div class="nav-bar__hamburger">
-      <span class="nav-bar__hamburger-1"></span>
-      <span class="nav-bar__hamburger-2"></span>
-      <span class="nav-bar__hamburger-3"></span>
-      <span class="nav-bar__hamburger-4"></span>
-    </div>
-    menu
-  </button>
-
+    <button class="nav-bar__menu-button" aria-expanded="false" aria-controls="nav-bar__categories">
+      <div class="nav-bar__hamburger">
+        <span class="nav-bar__hamburger-1"></span>
+        <span class="nav-bar__hamburger-2"></span>
+        <span class="nav-bar__hamburger-3"></span>
+        <span class="nav-bar__hamburger-4"></span>
+      </div>
+      menu
+    </button>
+  </div>
+  
   <ul id="nav-bar__categories" class="nav-bar__categories" aria-hidden="true">
-
     <li class="nav-bar__category">
       <h3 class="nav-bar__title">General</h3>
       <ul class="nav-bar__items">
@@ -45,6 +46,5 @@
         {% endfor %}
       </ul>
     </li>
-
   </ul>
 </nav>
