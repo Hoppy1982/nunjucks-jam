@@ -10,7 +10,7 @@ nunjucks.configure( ['./src/templates'] );
 const viewsDir = path.join(__dirname, 'src/templates/views');
 const ctx = {
   pages: {
-    misc: [
+    general: [
       { name: 'home', href: '/index.html' },
       { name: 'about', href: '/about.html' }
     ],

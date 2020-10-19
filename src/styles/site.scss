@@ -1,3 +1,29 @@
 @use './partials/_helpers';
 @use './partials/_nav-bar.scss';
 
+html {
+  scrollbar-color: #333 #111;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header, 
+footer {
+  flex: 0 0 auto;
+}
+
+main {
+  flex: 1 1 auto;
+  background: #111;
+}
+
+footer {
+  background: #111;
+  height: 80px;
+  color: #fff;
+  border-top: 1px solid #333;
+}

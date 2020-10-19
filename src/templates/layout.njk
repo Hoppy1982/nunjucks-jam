@@ -5,25 +5,44 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+    <!-- <meta property="og:title" content=""> -->
+    <!-- <meta property="og:type" content=""> -->
+    <!-- <meta property="og:url" content=""> -->
+    <!-- <meta property="og:image" content=""> -->
+    <!-- Place favicon.ico in the root directory -->
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <!-- <link rel="apple-touch-icon" href="icon.png"> -->
-    <!-- Place favicon.ico in the root directory -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../src/styles/global.scss">
-    <link rel="stylesheet" href="../src/styles/site.scss">
-    {% block headExtraStyles %}{% endblock %}
+    {% block fonts %}
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;700&display=swap" rel="stylesheet">
+    {% endblock %}
+    {% block styles %}
+      <link rel="stylesheet" href="../src/styles/global.scss">
+      <link rel="stylesheet" href="../src/styles/site.scss">
+    {% endblock %}
   </head>
 
   <body>
-    {% include './includes/nav-bar.njk' %}
-    {% block bodyContent %}
-      <h1>Default Header</h1>
+    <header>
+      {% block header %}
+        {% include './includes/nav-bar.njk' %}
+      {% endblock %}
+    </header>
+
+    <main>
+      {% block main %}{% endblock %}
+    </main>
+
+    <footer>
+      {% block footer %}
+        <ul>
+          <li><a>github</a></li>
+          <li><a>github</a></li>
+        </ul>
+      {% endblock %}
+    </footer>
+    
+    {% block bodyEndScripts %}
+      <script src="../src/js/site.js"></script>
     {% endblock %}
-    <script src="../src/js/site.js"></script>
-    {% block bodyExtraScripts %}{% endblock %}
   </body>
 </html>

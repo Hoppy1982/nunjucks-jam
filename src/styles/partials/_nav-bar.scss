@@ -19,6 +19,7 @@ $hamburger-height: 34px;
   align-items: center;
   padding: 10px 20px;
   background: #111;
+  border-bottom: 1px solid #333;
 }
 
 .nav-bar__site-title {
@@ -40,10 +41,14 @@ $hamburger-height: 34px;
   opacity: 0;
   right: 0;
   width: 100%;
-  min-height: 100vh;
-  background: rgb(29,33,30);
-  background: radial-gradient(circle at -20% 180%, rgba(29,33,30,1) 0%, rgba(39,48,41,1) 18%, rgba(17,17,17,1) 49%); 
-  top: 56px;
+  min-height: calc(100vh - 74px - 80px);// hardcode to account for header & footer heights
+  height: 0;
+  background: #111; 
+  background-image: radial-gradient(closest-side at 50% 40%, #111 80%,  hsl(200, 40%, 10%) 100%);
+  background-size: 100% 500%;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  top: 58px;
   transition: all 0.3s ease-in-out;
   padding: 20px 20px 60px;
   list-style: none;
@@ -60,6 +65,7 @@ $hamburger-height: 34px;
 }
 
 .nav-bar__items {
+  display: inline-block;
   list-style: none;
   padding-left: 0;
 }
@@ -92,7 +98,7 @@ $hamburger-height: 34px;
     cursor: pointer;
     & .nav-bar__link {
       background: transparent;
-      text-shadow: -2px -1px 1px #148f22, -4px -2px 1px #638525, -8px -4px 3px #7d7b1a;
+      text-shadow: -3px -2px 2px hsl(200, 50%, 60%), -6px -4px 3px hsl(200, 50%, 90%);
       font-weight: 400;
     }
   }
@@ -173,9 +179,15 @@ $hamburger-height: 34px;
 /**
  * MENU OPEN
  */
-.open {
-  .nav-bar__menu-button { color: #ddf; }// janky - js using a transition on button itself for timing control
-  .nav-bar__categories { opacity: 1; }
+ .nav-bar.open {
+  .nav-bar__menu-button {
+    color: #ddf;// janky - js using a transition on button itself for timing control
+  }
+
+  .nav-bar__categories {
+    height: auto;
+    opacity: 1;
+  }
   
   .nav-bar__category {
     transform: scale(1);
