@@ -14,7 +14,7 @@ navButton.addEventListener('click', function(evt) {
     navCatsOpenHeight = `${navCats.offsetHeight}px`;
     navBar.classList.remove('open');
     navBar.classList.add('closed');
-    navCats.style.height = '854px';
+    navCats.style.minHeight = navCatsOpenHeight;
     navCats.setAttribute('aria-hidden', 'true');
     this.setAttribute('aria-expanded', 'false');
   }
@@ -34,9 +34,8 @@ navButton.addEventListener('click', function(evt) {
  */
 navCats.ontransitionend = (evt) => {
   if ( evt.target === navCats && navBar.classList.contains('closed') ) {
-    console.log(evt.target)
     main.classList.remove('closed');
     main.classList.add('open');
-    navCats.style.height = '0px';
+    navCats.style.minHeight = '0px';
   }
 }

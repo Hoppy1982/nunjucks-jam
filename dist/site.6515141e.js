@@ -134,7 +134,7 @@ navButton.addEventListener('click', function (evt) {
     navCatsOpenHeight = "".concat(navCats.offsetHeight, "px");
     navBar.classList.remove('open');
     navBar.classList.add('closed');
-    navCats.style.height = '854px';
+    navCats.style.minHeight = navCatsOpenHeight;
     navCats.setAttribute('aria-hidden', 'true');
     this.setAttribute('aria-expanded', 'false');
   } else {
@@ -152,10 +152,9 @@ navButton.addEventListener('click', function (evt) {
 
 navCats.ontransitionend = function (evt) {
   if (evt.target === navCats && navBar.classList.contains('closed')) {
-    console.log(evt.target);
     main.classList.remove('closed');
     main.classList.add('open');
-    navCats.style.height = '0px';
+    navCats.style.minHeight = '0px';
   }
 };
 },{}],"../src/js/site.js":[function(require,module,exports) {
@@ -192,7 +191,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64122" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56385" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
