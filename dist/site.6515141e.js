@@ -121,77 +121,30 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 var navBar = document.querySelector('.nav-bar');
 var navButton = document.querySelector('.nav-bar__menu-button');
 var navItems = document.querySelector('.nav-bar__categories');
-var isOpen = navBar.classList.contains('open') ? true : false;
-var state = {
-  opening: false,
-  closing: false,
-  open: false,
-  closed: true
-};
 /**
- * Only actions menu click if not in transitional state. 
- * Probably overkill but will help if need to transition 
- * from display: none.
+ * Toggles nav menu visually and for screen readers
  */
 
 navButton.addEventListener('click', function (evt) {
-  if (state.closed === true) {
-    state.opening = true;
-    state.closing = false;
-    state.closed = false;
-    state.open = false;
-  }
-
-  if (state.open === true) {
-    state.closing = true;
-    state.closed = false;
-    state.opening = false;
-    state.open = false;
-  }
-
-  if (state.opening) {
-    navBar.classList.add('open');
-  }
-
-  if (state.closing) {
+  if (navBar.classList.contains('open')) {
     navBar.classList.remove('open');
-  }
-});
-/**
- * Reveals / removes menu to screen readers
- * once css transtions complete.
- */
-
-navButton.addEventListener('transitionend', function (evt) {
-  var transitionOnNavButton = evt.target === this;
-
-  if (state.opening && transitionOnNavButton) {
-    state.open = true;
-    state.opening = false;
-    state.closing = false;
-    state.closed = false;
-    this.setAttribute('aria-expanded', 'true');
-    navItems.removeAttribute('aria-hidden');
-  }
-
-  if (state.closing && transitionOnNavButton) {
-    state.closed = true;
-    state.closing = false;
-    state.opening = false;
-    state.open = false;
-    this.setAttribute('aria-expanded', 'false');
+    navBar.classList.add('closed');
     navItems.setAttribute('aria-hidden', 'true');
+    this.setAttribute('aria-expanded', 'false');
+  } else {
+    navBar.classList.remove('closed');
+    navBar.classList.add('open');
+    navItems.setAttribute('aria-hidden', 'false');
+    this.setAttribute('aria-expanded', 'true');
   }
 });
-},{}],"../src/js/index.js":[function(require,module,exports) {
+},{}],"../src/js/site.js":[function(require,module,exports) {
 "use strict";
 
 var _navBar = _interopRequireDefault(require("./nav-bar.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-console.log('hellow worldipssoops!');
-},{"./nav-bar.js":"../src/js/nav-bar.js"}],"../../../../../Users/mark.hopcraft/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./nav-bar.js":"../src/js/nav-bar.js"}],"C:/Users/Mark Hopcraft/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -219,7 +172,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58559" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55839" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -395,5 +348,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../Users/mark.hopcraft/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../src/js/index.js"], null)
-//# sourceMappingURL=/js.6c09a745.js.map
+},{}]},{},["C:/Users/Mark Hopcraft/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../src/js/site.js"], null)
+//# sourceMappingURL=/site.6515141e.js.map

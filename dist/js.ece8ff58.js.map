@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/js/index.js"],"names":["console","log"],"mappings":";;;AAEA,aAFA,QAAA,wBAEAA,QAAQC,IAAI","file":"js.ece8ff58.js","sourceRoot":"..\\pre-dist","sourcesContent":["import '../styles/index.scss';\r\n\r\nconsole.log('hellow worldipssoops!');"]}
