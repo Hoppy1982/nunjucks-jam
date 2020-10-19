@@ -1,0 +1,254 @@
+/**
+ * RESETS
+ */
+/**
+* LAYOUT
+*/
+.container-outer {
+  padding: 0 20px;
+}
+
+.container-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/**
+ * COMPONENT VARIABLES
+ */
+/**
+ * MISC
+ */
+.nav-bar {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  background: #111;
+}
+
+.nav-bar__site-title {
+  margin: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%;
+  color: #fff;
+}
+
+/**
+ * NAV MENU
+ */
+.nav-bar__categories {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  opacity: 0;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #1d211e;
+  background: radial-gradient(circle at -20% 180%, #1d211e 0%, #273029 18%, #111111 49%);
+  top: 56px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  padding: 20px 20px 60px;
+  list-style: none;
+  text-align: center;
+  color: #fff;
+}
+
+.nav-bar__category {
+  -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+  overflow: hidden;
+  margin-top: 2em;
+}
+
+.nav-bar__category-items {
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav-bar__category-title {
+  font-weight: 400;
+  color: #ddd;
+}
+
+.nav-bar__category-item {
+  position: relative;
+  margin-top: 1.5em;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#111), to(#111)), -webkit-gradient(linear, left top, left bottom, from(#111), to(#111)), -webkit-gradient(linear, left top, left bottom, from(#111), to(#111)), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background-image: linear-gradient(#111, #111), linear-gradient(#111, #111), linear-gradient(#111, #111), linear-gradient(#fff, #fff);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: center, center, center, center;
+  background-size: calc(100% - 4px) calc(100% - 4px), 100% calc(100% - 20px), calc(100% - 20px) 100%, 100%;
+}
+.nav-bar__category-item:hover, .nav-bar__category-item:focus {
+  cursor: pointer;
+}
+.nav-bar__category-item:hover .nav-bar__link, .nav-bar__category-item:focus .nav-bar__link {
+  background: transparent;
+  text-shadow: -2px -1px 1px #148f22, -4px -2px 1px #638525, -8px -4px 3px #7d7b1a;
+  font-weight: 400;
+}
+
+.nav-bar__link {
+  font-weight: 200;
+  background: #111;
+  display: block;
+  padding: 8px 16px;
+  -webkit-transition-property: background-color, font-weight, text-shadow;
+  transition-property: background-color, font-weight, text-shadow;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-duration: 0.4s, 0.2s, 0.1s;
+          transition-duration: 0.4s, 0.2s, 0.1s;
+}
+
+/**
+ * MENU BUTTON
+ */
+.nav-bar__menu-button {
+  background: transparent;
+  -webkit-box-shadow: 0px 0px 0px transparent;
+          box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  font-size: 16px;
+  color: #fff;
+  -webkit-transition: color 0.6s;
+  transition: color 0.6s;
+}
+.nav-bar__menu-button:hover {
+  background: transparent;
+  -webkit-box-shadow: 0px 0px 0px transparent;
+          box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+.nav-bar__menu-button:active {
+  outline: none;
+  border: none;
+}
+.nav-bar__menu-button:focus {
+  outline: 0;
+}
+.nav-bar__menu-button:hover, .nav-bar__menu-button:focus {
+  cursor: pointer;
+}
+
+/**
+ * HAMBURGER
+ */
+.nav-bar__hamburger {
+  position: relative;
+  width: 40px;
+  height: 34px;
+}
+
+.nav-bar__hamburger-1,
+.nav-bar__hamburger-2,
+.nav-bar__hamburger-3,
+.nav-bar__hamburger-4 {
+  background: #fff;
+  width: 40px;
+  height: 4px;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+}
+
+.nav-bar__hamburger-1 {
+  top: 0;
+  -webkit-transition: margin 0.2s ease-in, top 0.2s ease-in, opacity 0.2s;
+  transition: margin 0.2s ease-in, top 0.2s ease-in, opacity 0.2s;
+}
+
+.nav-bar__hamburger-4 {
+  bottom: 0;
+  -webkit-transition: margin 0.2s ease-in, bottom 0.2s ease-in, opacity 0.2s;
+  transition: margin 0.2s ease-in, bottom 0.2s ease-in, opacity 0.2s;
+}
+
+.nav-bar__hamburger-2,
+.nav-bar__hamburger-3 {
+  top: 50%;
+  margin-top: calc(-4px / 2);
+  -webkit-transition: -webkit-transform 0.1s ease-in;
+  transition: -webkit-transform 0.1s ease-in;
+  transition: transform 0.1s ease-in;
+  transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in;
+}
+
+/***************** STATE *************************/
+/**
+ * MENU OPEN
+ */
+.open .nav-bar__menu-button {
+  color: #ddf;
+}
+.open .nav-bar__categories {
+  opacity: 1;
+}
+.open .nav-bar__category {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+.open .nav-bar__hamburger-1 {
+  top: 50%;
+  margin-top: calc(-4px / 2);
+  opacity: 0;
+}
+.open .nav-bar__hamburger-4 {
+  bottom: 50%;
+  margin-bottom: calc(-4px / 2);
+  opacity: 0;
+}
+.open .nav-bar__hamburger-2 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.open .nav-bar__hamburger-3 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+
+
+/*# sourceMappingURL=/styles.41ff8cf8.7c52bfd4.css.map */
