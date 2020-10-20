@@ -157,13 +157,94 @@ navCats.ontransitionend = function (evt) {
     navCats.style.minHeight = '0px';
   }
 };
+},{}],"../src/js/mh-home-svg.js":[function(require,module,exports) {
+var mhHome = document.getElementById('mh-home');
+var smallML4 = document.querySelector('#mh-home #small-m #line4');
+var animations = [{
+  el: smallML4,
+  attr: 'x1',
+  val0: 25,
+  val1: 5,
+  duration: 3000,
+  tFn: tFnLinear
+}, {
+  el: smallML4,
+  attr: 'y1',
+  val0: 123,
+  val1: 88,
+  duration: 3000,
+  tFn: tFnLinear
+}, {
+  el: smallML4,
+  attr: 'x2',
+  val0: 25,
+  val1: 90,
+  duration: 3000,
+  tFn: tFnLinear
+}, {
+  el: smallML4,
+  attr: 'y2',
+  val0: 25,
+  val1: 5,
+  duration: 3000,
+  tFn: tFnLinear
+}];
+mhHome.addEventListener('mouseenter', function (evt) {
+  animations.forEach(function (animation) {
+    animateAttr(animation.el, animation.attr, animation.val0, animation.val1, animation.duration, animation.tFn);
+  });
+});
+mhHome.addEventListener('mouseleave', function (evt) {//const ani = animations[0];
+  //animateAttr(ani.el, ani.attr, ani.val1, ani.val0, ani.duration, ani.tFn);
+});
+
+function animateAttr(el, attr, val0, val1, duration, tFn) {
+  var nSteps = duration / 16.67;
+  var isStartValLower = val0 < val1 ? true : false;
+  var spread = isStartValLower ? val1 - val0 : val0 - val1;
+  var start;
+
+  function update(timestamp) {
+    if (start === undefined) {
+      start = timestamp;
+    } // do the change
+
+
+    var elapsed = timestamp - start;
+    var currVal = el.getAttribute(attr);
+    var currValNum = parseFloat(currVal);
+    var fractionComplete = Math.abs((currValNum - val0) / spread);
+    var newValNum;
+
+    if (isStartValLower) {
+      newValNum = currValNum + 0.8;
+    } else {
+      newValNum = currValNum - 0.8;
+    }
+
+    var newVal = newValNum.toString();
+    el.setAttribute(attr, newVal);
+
+    if (fractionComplete < 1) {
+      window.requestAnimationFrame(update);
+    }
+  }
+
+  window.requestAnimationFrame(update);
+}
+
+function tFnLinear(timeFraction) {
+  return timeFraction;
+}
 },{}],"../src/js/site.js":[function(require,module,exports) {
 "use strict";
 
 var _navBar = _interopRequireDefault(require("./nav-bar.js"));
 
+var _mhHomeSvg = _interopRequireDefault(require("./mh-home-svg.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./nav-bar.js":"../src/js/nav-bar.js"}],"C:/Users/Mark Hopcraft/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./nav-bar.js":"../src/js/nav-bar.js","./mh-home-svg.js":"../src/js/mh-home-svg.js"}],"C:/Users/Mark Hopcraft/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -191,7 +272,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56385" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58926" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
