@@ -23,21 +23,24 @@ animatingCoords.forEach(coord => {
 let currFrame = 0;
 let requestID = null;
 let direction = null;
+let duration = 4000;
+let start;
 
 
 /**
  * step
  */
 function step() {
-  if (start === undefined) {
-    start = timestamp;
-  }
+  if (start === undefined) start = timestamp;
 
   let elapsed = timestamp - start;
-  currFrame +=1;
+  currFrame +=1; // not needed?
 
   currFrame += direction;
-  let progress = currFrame / nFrames; 
+  let progress = duration / elapsed; 
+  if (progress > 1) {
+    progress = 1;
+  }
 
   // do the things
   animatingCoords[0];
@@ -64,7 +67,7 @@ function stopAnimation() {
 mhHome.addEventListener('mouseenter', (evt) => {
   if(requestID) stopAnimation();
   direction = 1;
-  updateCoords(animatingCoords);
+  step(animatingCoords);
 }, false);
 
 

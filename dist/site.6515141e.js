@@ -205,19 +205,24 @@ animatingCoords.forEach(function (coord) {
 var currFrame = 0;
 var requestID = null;
 var direction = null;
+var duration = 4000;
+var start;
 /**
  * step
  */
 
 function step() {
-  if (start === undefined) {
-    start = timestamp;
-  }
-
+  if (start === undefined) start = timestamp;
   var elapsed = timestamp - start;
-  currFrame += 1;
+  currFrame += 1; // not needed?
+
   currFrame += direction;
-  var progress = currFrame / nFrames; // do the things
+  var progress = duration / elapsed;
+
+  if (progress > 1) {
+    progress = 1;
+  } // do the things
+
 
   animatingCoords[0];
 
@@ -241,7 +246,7 @@ function stopAnimation() {
 mhHome.addEventListener('mouseenter', function (evt) {
   if (requestID) stopAnimation();
   direction = 1;
-  updateCoords(animatingCoords);
+  step(animatingCoords);
 }, false);
 /*
 const animations = [
@@ -355,7 +360,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56364" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56593" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
